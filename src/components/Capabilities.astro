@@ -1,0 +1,153 @@
+---
+const capabilities = [
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"/></svg>`,
+    title: 'Cloud Infrastructure',
+    tags: ['AWS', 'ECS Fargate', 'Terraform', 'RDS', 'CloudFront'],
+    desc: 'Production-grade AWS environments — VPC, ALB, ECS, RDS, CloudFront, WAF. Built to scale from zero to millions of requests without surprises.',
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`,
+    title: 'CI/CD & Deployments',
+    tags: ['GitHub Actions', 'Zero-Downtime', 'CodeDeploy', 'ECR'],
+    desc: 'Blue-green deployments with automated rollbacks, build caching, environment automation, and CloudFront invalidation — every push ships cleanly.',
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+    title: 'Backend Systems',
+    tags: ['Node.js', 'Redis', 'BullMQ', 'Inngest'],
+    desc: 'Fault-tolerant async job architectures for media processing, AI workflows, credit systems, and real-time orchestration at scale.',
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+    title: 'Observability',
+    tags: ['OpenTelemetry', 'PostHog', 'CloudWatch'],
+    desc: 'End-to-end tracing, product analytics, and alerting pipelines — so you know exactly what broke and where, before users do.',
+  },
+  {
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+    title: 'Cost Engineering',
+    tags: ['$500+/mo saved', 'Right-Sizing', 'IaC'],
+    desc: 'Replace bloated SaaS tooling with lean self-hosted alternatives. Right-size cloud resources. Optimize delivery. Keep more runway.',
+  },
+];
+---
+
+<section class="capabilities" id="capabilities">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">What I Own</span>
+      <h2 class="section-title font-syne">End-to-End.<br />Every Layer.</h2>
+    </div>
+
+    <div class="cap-grid">
+      {
+        capabilities.map((cap, i) => (
+          <div class={`glass cap-card reveal reveal-d${(i % 5) + 1}`}>
+            <div class="cap-icon" set:html={cap.icon} />
+            <h3 class="cap-title font-syne">{cap.title}</h3>
+            <p class="cap-desc">{cap.desc}</p>
+            <div class="cap-tags">
+              {cap.tags.map((tag) => (
+                <span class="cap-tag font-mono">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .capabilities {
+    padding: 130px 28px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 60px;
+  }
+
+  .section-title {
+    font-family: 'Epilogue', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    color: #f0f0f0;
+    margin-top: 12px;
+  }
+
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  /* Row 2: center the last 2 cards */
+  .cap-card:nth-child(4) { grid-column: 1; }
+  .cap-card:nth-child(5) { grid-column: 2; }
+
+  @media (max-width: 900px) {
+    .cap-grid { grid-template-columns: repeat(2, 1fr); }
+    .cap-card:nth-child(4),
+    .cap-card:nth-child(5) { grid-column: auto; }
+  }
+
+  @media (max-width: 560px) {
+    .cap-grid { grid-template-columns: 1fr; }
+  }
+
+  .cap-card {
+    padding: 30px 26px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cap-icon {
+    color: var(--accent);
+    opacity: 0.85;
+    margin-bottom: 4px;
+    flex-shrink: 0;
+  }
+
+  .cap-title {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f0f0f0;
+    letter-spacing: -0.01em;
+  }
+
+  .cap-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.86rem;
+    line-height: 1.68;
+    color: rgba(237, 237, 237, 0.48);
+    flex: 1;
+  }
+
+  .cap-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+  }
+
+  .cap-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    padding: 3px 9px;
+    border-radius: 4px;
+    background: rgba(232, 92, 44, 0.1);
+    color: rgba(232, 92, 44, 0.95);
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(232, 92, 44, 0.22);
+  }
+</style>

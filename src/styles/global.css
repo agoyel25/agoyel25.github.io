@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────
+   Design Tokens
+───────────────────────────────────────── */
+:root {
+  --bg: #181818;
+  --bg-card: #1f1f1f;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-hover: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.22);
+  --accent: #e85c2c;
+  --accent-light: #ff9147;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.5);
+  --dim: rgba(255, 255, 255, 0.25);
+}
+
+/* ─────────────────────────────────────────
+   Base
+───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─────────────────────────────────────────
+   Scrollbar
+───────────────────────────────────────── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #222; }
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 9999px;
+}
+* { scrollbar-width: thin; scrollbar-color: var(--accent) #222; }
+
+/* ─────────────────────────────────────────
+   Typography Utilities
+───────────────────────────────────────── */
+.font-syne  { font-family: 'Epilogue', sans-serif; }
+.font-dm    { font-family: 'DM Sans', sans-serif; }
+.font-mono  { font-family: 'JetBrains Mono', monospace; }
+
+/* Orange text highlight — no gradient trick, just solid readable orange */
+.gradient-text {
+  color: var(--accent);
+  /* keep the gradient-clip as fallback for browsers that support it well */
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+}
+
+/* ─────────────────────────────────────────
+   Glass Card
+───────────────────────────────────────── */
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition:
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    background 0.28s ease;
+}
+
+.glass:hover {
+  transform: translateY(-2px);
+  border-color: rgba(232, 92, 44, 0.35);
+  background: var(--surface-hover);
+  box-shadow: 0 12px 40px rgba(232, 92, 44, 0.08);
+}
+
+/* ─────────────────────────────────────────
+   Buttons
+───────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 13px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #d44f20;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(232, 92, 44, 0.38);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 13px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────────
+   Scroll Reveal
+───────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
+.reveal-d5 { transition-delay: 0.40s; }
+
+/* ─────────────────────────────────────────
+   Orb Keyframes
+───────────────────────────────────────── */
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  35%       { transform: translate(45px, -55px) scale(1.06); }
+  70%       { transform: translate(-28px, 28px) scale(0.96); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%       { transform: translate(-55px, 40px) scale(1.04); }
+  75%       { transform: translate(35px, -30px) scale(1.08); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(28px, 55px) scale(1.03); }
+}

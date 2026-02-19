@@ -1,0 +1,234 @@
+---
+const experience = [
+  {
+    role: 'Founding Engineer / DevOps & Backend',
+    company: 'Vubo',
+    url: 'https://vubo.ai',
+    period: 'Feb 2025 — Present',
+    type: 'Full-time',
+    bullets: [
+      'Built and maintained production infrastructure for an AI-powered video SaaS using AWS (ECS Fargate, S3, CloudFront, RDS, Lambda) and Docker-based deployments.',
+      'Designed scalable background job architecture using Redis + BullMQ/Inngest for media processing, AI workflows, and async task orchestration.',
+      'Implemented subscription-based credit system with atomic usage control, rate limiting, and workspace-level storage enforcement.',
+      'Optimized CI/CD pipelines using GitHub Actions with build caching, environment automation, and automated CloudFront cache invalidation.',
+      'Integrated observability with OpenTelemetry and PostHog to monitor performance and user behavior across AI generation pipelines.',
+      'Reduced infrastructure costs through architecture optimization, resource right-sizing, and efficient cloud asset delivery strategies.',
+    ],
+  },
+  {
+    role: 'Software Engineer — Freelance / DevOps',
+    company: 'Independent Projects & Startup Consulting',
+    url: null,
+    period: 'Jun 2024 — Present',
+    type: 'Freelance',
+    bullets: [
+      'Designed and deployed cloud infrastructure for early-stage startups using AWS, Docker, reverse proxies, and automated CI/CD workflows.',
+      'Reduced operational costs by replacing $500+/month SaaS tools with self-hosted alternatives (Umami, Chatwoot, Uptime Kuma, OpenReplay) on a single VPS.',
+      'Implemented secure production environments with HTTPS/TLS, least-privilege access, environment isolation, and VPN-restricted internal services.',
+      'Built backend services and automation workflows for analytics, media processing, and scheduled job execution with high reliability.',
+      'Provided end-to-end DevOps setup including infrastructure provisioning, monitoring, logging, and deployment automation for multiple projects.',
+    ],
+  },
+];
+---
+
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Experience</span>
+      <h2 class="section-title font-syne">Where I've<br />shipped.</h2>
+    </div>
+
+    <div class="exp-list">
+      {
+        experience.map((exp, i) => (
+          <div class={`exp-entry reveal reveal-d${i + 1}`}>
+            <div class="exp-header">
+              <div class="exp-left">
+                <div class="exp-role-row">
+                  <span class="exp-role font-syne">{exp.role}</span>
+                  <span class={`exp-badge font-mono ${exp.type === 'Full-time' ? 'badge-ft' : 'badge-fl'}`}>
+                    {exp.type}
+                  </span>
+                </div>
+                <div class="exp-company-row">
+                  {exp.url ? (
+                    <a
+                      href={exp.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="exp-company gradient-text font-syne"
+                    >
+                      {exp.company} ↗
+                    </a>
+                  ) : (
+                    <span class="exp-company-plain font-syne">{exp.company}</span>
+                  )}
+                </div>
+              </div>
+              <span class="exp-period font-mono">{exp.period}</span>
+            </div>
+
+            <ul class="exp-bullets">
+              {exp.bullets.map((bullet) => (
+                <li class="exp-bullet">
+                  <span class="bullet-dot" aria-hidden="true" />
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience {
+    padding: 130px 28px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 60px;
+  }
+
+  .section-title {
+    font-family: 'Epilogue', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    color: #f0f0f0;
+    margin-top: 12px;
+  }
+
+  .exp-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .exp-entry {
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .exp-entry:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  /* ── Header ─────────────────────────── */
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .exp-role-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+  }
+
+  .exp-role {
+    font-family: 'Epilogue', sans-serif;
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    font-weight: 700;
+    color: #f0f0f0;
+    letter-spacing: -0.01em;
+  }
+
+  .exp-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .badge-ft {
+    background: rgba(232, 92, 44, 0.1);
+    color: rgba(232, 92, 44, 0.95);
+    border: 1px solid rgba(232, 92, 44, 0.22);
+  }
+
+  .badge-fl {
+    background: rgba(255, 145, 71, 0.09);
+    color: rgba(255, 145, 71, 0.92);
+    border: 1px solid rgba(255, 145, 71, 0.2);
+  }
+
+  .exp-company {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: opacity 0.2s ease;
+  }
+
+  .exp-company:hover { opacity: 0.78; }
+
+  .exp-company-plain {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgba(237, 237, 237, 0.45);
+  }
+
+  .exp-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: rgba(237, 237, 237, 0.28);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  /* ── Bullets ────────────────────────── */
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .exp-bullet {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .bullet-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 9px;
+    opacity: 0.65;
+  }
+
+  .exp-bullet span:last-child {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.72;
+    color: rgba(237, 237, 237, 0.48);
+  }
+
+  @media (max-width: 640px) {
+    .exp-period { white-space: normal; }
+  }
+</style>

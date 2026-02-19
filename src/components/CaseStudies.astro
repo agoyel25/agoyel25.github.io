@@ -1,0 +1,300 @@
+---
+const cases = [
+  {
+    label: 'AI Video SaaS',
+    title: 'Vubo',
+    url: 'https://vubo.ai',
+    metric: '0',
+    metricLabel: 'Downtime\non Deploys',
+    problem:
+      'Needed production-grade, multi-tenant AI video SaaS infrastructure built from the ground up — no existing playbook, aggressive timelines.',
+    built:
+      'AWS ECS Fargate + Redis/BullMQ/Inngest pipeline for AI media processing, subscription-gated credit system, CI/CD via GitHub Actions, OpenTelemetry tracing across every pipeline step.',
+    result:
+      'Zero-downtime deployments with automated blue-green rollouts. Full observability across AI generation workflows. System handles concurrent workloads without degradation.',
+    tags: ['AWS ECS', 'Next.js', 'Redis', 'Inngest', 'BullMQ', 'GitHub Actions'],
+  },
+  {
+    label: 'Startup Cost Reduction',
+    title: 'Self-Hosted Stack',
+    url: null,
+    metric: '$6K+',
+    metricLabel: 'Saved\nPer Year',
+    problem:
+      'Early-stage startups burning runway on SaaS analytics, live chat, uptime monitoring, and session replay tools — spending before finding product-market fit.',
+    built:
+      'Replaced paid SaaS with self-hosted Umami (analytics), Chatwoot (support), Uptime Kuma (monitoring), OpenReplay (session replay) on a single hardened VPS with full HTTPS/TLS.',
+    result:
+      'Over $6,000/year recaptured with zero functional compromise. Least-privilege access, VPN-restricted internals, environment isolation — more secure than the SaaS it replaced.',
+    tags: ['Docker', 'Nginx', 'VPS', 'Umami', 'Chatwoot', 'OpenReplay'],
+  },
+  {
+    label: 'AI Video Analysis Platform',
+    title: 'ClipDecode',
+    url: 'https://clipdecode.com',
+    metric: '2',
+    metricLabel: 'AI Models\nOrchestrated',
+    problem:
+      'Extracting meaningful insights from video content required manual review — slow, unscalable, and completely unusable for teams processing large volumes of clips.',
+    built:
+      '4-stage AI pipeline (download → transcription → analysis → synthesis) using Google Gemini + Mistral APIs, orchestrated via Convex scheduler with fault-tolerant retry logic and real-time state updates.',
+    result:
+      'Fully automated video-to-insights pipeline. Credit-based usage with tier access, idempotent Dodo Payments webhooks for zero-loss billing, and Clerk auth — shipped as a production SaaS.',
+    tags: ['Next.js 15', 'Convex', 'Gemini', 'Mistral', 'TypeScript', 'Dodo Payments'],
+  },
+  {
+    label: 'Infrastructure as Code',
+    title: 'Cloud Infra Automation',
+    url: null,
+    metric: '100%',
+    metricLabel: 'Infrastructure\nas Code',
+    problem:
+      'Manual provisioning was error-prone, non-reproducible, and created dangerous drift between staging and production environments.',
+    built:
+      'Modular Terraform for VPC, ALB, ECS/Fargate, RDS, CloudFront, WAF, ElastiCache. Blue-green deployments via CodeDeploy integrated with GitHub Actions and ECR workflows.',
+    result:
+      'Fully reproducible, secure-by-default infra with least-privilege IAM, WAF rules, and SSM secrets management. New environments spin up in minutes. Zero configuration drift.',
+    tags: ['Terraform', 'AWS', 'CodeDeploy', 'CloudWatch', 'WAF', 'RDS Proxy'],
+  },
+];
+---
+
+<section class="case-studies" id="work">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Work That Shipped</span>
+      <h2 class="section-title font-syne">Real problems.<br />Real outcomes.</h2>
+    </div>
+
+    <div class="cases-list">
+      {
+        cases.map((c, i) => (
+          <div class={`glass case-card reveal reveal-d${(i % 3) + 1}`}>
+            <div class="case-top">
+              <div class="case-meta">
+                <span class="section-label">{c.label}</span>
+                <div class="case-title-row">
+                  <h3 class="case-title font-syne">{c.title}</h3>
+                  {c.url && (
+                    <a
+                      href={c.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="case-link font-mono"
+                    >
+                      {c.url.replace('https://', '')} ↗
+                    </a>
+                  )}
+                </div>
+              </div>
+              <div class="case-metric">
+                <span class="metric-num gradient-text font-syne">{c.metric}</span>
+                <span class="metric-label font-mono" set:html={c.metricLabel.replace('\n', '<br/>')} />
+              </div>
+            </div>
+
+            <div class="case-body">
+              <div class="case-col">
+                <span class="col-label font-mono">Problem</span>
+                <p>{c.problem}</p>
+              </div>
+              <div class="case-divider" aria-hidden="true" />
+              <div class="case-col">
+                <span class="col-label font-mono">What I Built</span>
+                <p>{c.built}</p>
+              </div>
+              <div class="case-divider" aria-hidden="true" />
+              <div class="case-col">
+                <span class="col-label font-mono">Result</span>
+                <p>{c.result}</p>
+              </div>
+            </div>
+
+            <div class="case-footer">
+              {c.tags.map((tag) => (
+                <span class="cap-tag font-mono">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .case-studies {
+    padding: 130px 28px;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(232, 92, 44, 0.015) 50%,
+      transparent 100%
+    );
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 60px;
+  }
+
+  .section-title {
+    font-family: 'Epilogue', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    color: #f0f0f0;
+    margin-top: 12px;
+  }
+
+  .cases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* ── Card ───────────────────────────── */
+  .case-card {
+    padding: 36px 36px 28px;
+  }
+
+  .case-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  .case-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .case-title {
+    font-family: 'Epilogue', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #f0f0f0;
+    margin-top: 8px;
+  }
+
+  .case-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  .case-link:hover { opacity: 1; }
+
+  /* ── Metric ─────────────────────────── */
+  .case-metric {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .metric-num {
+    font-family: 'Epilogue', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1;
+    display: block;
+  }
+
+  .metric-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(237, 237, 237, 0.3);
+    display: block;
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+
+  /* ── Body 3-col ─────────────────────── */
+  .case-body {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    margin-bottom: 24px;
+  }
+
+  .case-divider {
+    width: 1px;
+    background: rgba(255, 255, 255, 0.07);
+    margin: 0 28px;
+  }
+
+  .case-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .col-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(237, 237, 237, 0.28);
+  }
+
+  .case-col p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.86rem;
+    line-height: 1.68;
+    color: rgba(237, 237, 237, 0.5);
+  }
+
+  /* ── Footer tags ────────────────────── */
+  .case-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.055);
+  }
+
+  .cap-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    padding: 3px 9px;
+    border-radius: 4px;
+    background: rgba(232, 92, 44, 0.1);
+    color: rgba(232, 92, 44, 0.95);
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(232, 92, 44, 0.22);
+  }
+
+  /* ── Responsive ─────────────────────── */
+  @media (max-width: 768px) {
+    .case-body {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .case-divider {
+      width: 100%;
+      height: 1px;
+      margin: 20px 0;
+    }
+
+    .case-metric { text-align: left; }
+    .case-card { padding: 24px 20px 20px; }
+  }
+</style>

@@ -1,0 +1,90 @@
+---
+const stats = [
+  { value: '3+',    label: 'Startups Helped' },
+  { value: '$6K+',  label: 'Saved Per Year' },
+  { value: '0',     label: 'Downtime Deploys' },
+  { value: '100%',  label: 'Infra as Code' },
+];
+---
+
+<div class="stats-strip reveal">
+  <div class="stats-inner">
+    {stats.map((stat, i) => (
+      <>
+        <div class="stat-item">
+          <span class="stat-value font-syne">{stat.value}</span>
+          <span class="stat-label font-mono">{stat.label}</span>
+        </div>
+        {i < stats.length - 1 && <div class="stat-divider" aria-hidden="true" />}
+      </>
+    ))}
+  </div>
+</div>
+
+<style>
+  .stats-strip {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0 28px;
+  }
+
+  .stats-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 36px 20px;
+    transition: background 0.2s ease;
+  }
+
+  .stat-item:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .stat-value {
+    font-family: 'Epilogue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 560px) {
+    .stats-inner {
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      flex: 1 1 50%;
+      padding: 24px 16px;
+    }
+
+    .stat-divider {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,162 @@
+---
+---
+
+<section class="contact" id="contact">
+  <!-- Ambient glow -->
+  <div class="contact-glow" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-text reveal">
+        <span class="section-label">Contact</span>
+        <h2 class="contact-heading font-syne">
+          Let's build<br />something <span class="gradient-text">fast.</span>
+        </h2>
+        <p class="contact-sub">
+          Whether you're scaling infra, cutting costs, or shipping a new product — I've done it before and I'll get it right.
+        </p>
+      </div>
+
+      <div class="contact-actions reveal reveal-d2">
+        <a href="mailto:amangoyel0@gmail.com" class="btn-primary contact-email">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          amangoyel0@gmail.com
+        </a>
+
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/amangoyal25" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="LinkedIn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            <span class="font-mono">LinkedIn</span>
+          </a>
+
+          <a href="https://github.com/agoyel25" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            <span class="font-mono">GitHub</span>
+          </a>
+
+          <a href="https://agoyel25.github.io" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Portfolio">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+              <path d="M2 12h20"/>
+            </svg>
+            <span class="font-mono">Portfolio</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 150px 28px 130px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(ellipse at center, rgba(232, 92, 44, 0.05), transparent 70%);
+    pointer-events: none;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .contact-heading {
+    font-family: 'Epilogue', sans-serif;
+    font-size: clamp(3rem, 6.5vw, 5rem);
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    color: #f0f0f0;
+    margin: 16px 0 22px;
+  }
+
+  .contact-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: rgba(237, 237, 237, 0.42);
+    max-width: 380px;
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-email {
+    font-size: 0.84rem;
+    padding: 14px 22px;
+    justify-content: center;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: rgba(237, 237, 237, 0.5);
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .icon-link span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+
+  .icon-link:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    color: rgba(237, 237, 237, 0.88);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  @media (max-width: 768px) {
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .contact-sub { max-width: 100%; }
+  }
+</style>

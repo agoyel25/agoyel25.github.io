@@ -1,0 +1,153 @@
+---
+const groups = [
+  {
+    label: 'Languages',
+    tags: ['TypeScript', 'JavaScript', 'Golang', 'SQL', 'Shell Scripting'],
+  },
+  {
+    label: 'Cloud & Infra',
+    tags: [
+      'AWS ECS Fargate',
+      'EC2',
+      'S3',
+      'CloudFront',
+      'RDS',
+      'Lambda',
+      'IAM',
+      'CloudWatch',
+      'WAF',
+      'Docker',
+      'Terraform',
+      'GitHub Actions',
+    ],
+  },
+  {
+    label: 'Backend',
+    tags: [
+      'Node.js',
+      'Next.js',
+      'Express.js',
+      'Redis',
+      'BullMQ',
+      'Inngest',
+      'Convex',
+      'PostgreSQL',
+      'Drizzle ORM',
+      'REST APIs',
+    ],
+  },
+  {
+    label: 'Observability',
+    tags: ['OpenTelemetry', 'PostHog', 'CloudWatch', 'Logging', 'Metrics', 'Performance Optimization'],
+  },
+];
+---
+
+<section class="techstack">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Tech Stack</span>
+      <h2 class="section-title font-syne">Tools I ship<br />production with.</h2>
+    </div>
+
+    <div class="stack-groups">
+      {
+        groups.map((group, i) => (
+          <div class={`stack-group reveal reveal-d${(i % 4) + 1}`}>
+            <span class="group-label font-mono">{group.label}</span>
+            <div class="tag-grid">
+              {group.tags.map((tag) => (
+                <span class="stack-tag font-mono">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .techstack {
+    padding: 130px 28px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 60px;
+  }
+
+  .section-title {
+    font-family: 'Epilogue', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    color: #f0f0f0;
+    margin-top: 12px;
+  }
+
+  .stack-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .stack-group {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .stack-group:first-of-type {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .group-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(237, 237, 237, 0.28);
+    padding-top: 7px;
+  }
+
+  .tag-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .stack-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    padding: 6px 14px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(237, 237, 237, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    letter-spacing: 0.03em;
+    cursor: default;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .stack-tag:hover {
+    background: rgba(232, 92, 44, 0.1);
+    color: rgba(232, 92, 44, 0.95);
+    border-color: rgba(232, 92, 44, 0.25);
+  }
+
+  @media (max-width: 600px) {
+    .stack-group {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  }
+</style>
