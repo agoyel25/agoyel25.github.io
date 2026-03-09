@@ -3,14 +3,20 @@
 
 <nav id="main-nav" class="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo gradient-text font-syne">AG</a>
+    <a href="#top" class="nav-logo" aria-label="Aman Goyal home">
+      <img src="/aman-portfolio-pfp.jpg" alt="Aman Goyal" class="nav-avatar" />
+      <span class="nav-logo-text">
+        <span class="font-syne">Aman Goyal</span>
+        <span class="font-mono">DevOps & Backend</span>
+      </span>
+    </a>
     <div class="nav-right">
       <div class="nav-links">
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </div>
-      <a href="/resume.pdf" download="Aman_Goyal_Resume.pdf" class="nav-resume font-mono">
+      <a href="/Aman_Goyal_Resume.pdf" download="Aman_Goyal_Resume.pdf" class="nav-resume font-mono">
         Resume ↗
       </a>
     </div>
@@ -47,11 +53,40 @@
   }
 
   .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 800;
     text-decoration: none;
-    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-avatar {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(232, 92, 44, 0.32);
+    box-shadow: 0 10px 30px rgba(232, 92, 44, 0.14);
+  }
+
+  .nav-logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .nav-logo-text span:first-child {
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: #f5f5f5;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  .nav-logo-text span:last-child {
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(237, 237, 237, 0.34);
   }
 
   .nav-right {
@@ -100,6 +135,11 @@
   }
 
   @media (max-width: 480px) {
+    .nav-logo-text { display: none; }
+    .nav-avatar {
+      width: 40px;
+      height: 40px;
+    }
     .nav-links { gap: 20px; }
     .nav-links a { font-size: 0.8rem; }
   }
