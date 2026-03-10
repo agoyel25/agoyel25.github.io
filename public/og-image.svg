@@ -1,100 +1,98 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="1200" height="630" fill="#181818"/>
-
-  <!-- Subtle dot grid pattern -->
-  <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-    <circle cx="1" cy="1" r="1" fill="rgba(255,255,255,0.06)"/>
-  </pattern>
-  <rect width="1200" height="630" fill="url(#dots)"/>
-
-  <!-- Left accent bar (orange gradient) -->
-  <rect x="0" y="0" width="6" height="630" fill="url(#accentGrad)"/>
-
-  <!-- Right glow blob -->
-  <ellipse cx="1050" cy="200" rx="280" ry="220" fill="rgba(232,92,44,0.07)"/>
-  <ellipse cx="1100" cy="500" rx="160" ry="140" fill="rgba(255,145,71,0.05)"/>
-
-  <!-- Accent gradient definition -->
   <defs>
     <linearGradient id="accentGrad" x1="0" y1="0" x2="0" y2="630" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#e85c2c"/>
       <stop offset="100%" stop-color="#ff9147"/>
     </linearGradient>
-    <linearGradient id="textGrad" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="textGrad" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#e85c2c"/>
       <stop offset="100%" stop-color="#ff9147"/>
     </linearGradient>
+    <linearGradient id="ctaBg" x1="0" y1="0" x2="260" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e85c2c"/>
+      <stop offset="100%" stop-color="#ff9147"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="rgba(255,255,255,0.055)"/>
+    </pattern>
   </defs>
 
-  <!-- Logo mark (stylized "A") -->
-  <g transform="translate(80, 70)">
-    <rect width="88" height="88" rx="20" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-    <!-- A shape -->
-    <polygon points="44,16 68,72 20,72" fill="none" stroke="white" stroke-width="5" stroke-linejoin="round"/>
-    <line x1="29" y1="56" x2="59" y2="56" stroke="white" stroke-width="5" stroke-linecap="round"/>
-    <!-- pink/magenta accent dot -->
-    <circle cx="44" cy="76" r="5" fill="#e054a0"/>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#181818"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Right glow -->
+  <ellipse cx="1060" cy="220" rx="300" ry="240" fill="rgba(232,92,44,0.08)"/>
+
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="6" height="630" fill="url(#accentGrad)"/>
+
+  <!-- ── Logo mark ────────────────────────── -->
+  <g transform="translate(80, 52)">
+    <rect width="72" height="72" rx="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <polygon points="36,12 56,60 16,60" fill="none" stroke="white" stroke-width="4.5" stroke-linejoin="round"/>
+    <line x1="23" y1="46" x2="49" y2="46" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="36" cy="63" r="4" fill="#e054a0"/>
   </g>
 
-  <!-- Name -->
-  <text x="80" y="236" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="64" fill="white" letter-spacing="-1">Aman Goyal</text>
+  <!-- ── Name & Role ─────────────────────── -->
+  <text x="172" y="88" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="26" fill="white">Aman Goyal</text>
+  <text x="172" y="116" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="18" fill="rgba(255,255,255,0.45)">DevOps &amp; Backend Engineer  ·  Founding Engineer at Vubo</text>
 
-  <!-- Title with orange accent -->
-  <text x="82" y="300" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="500" font-size="32" fill="url(#textGrad)">DevOps &amp; Backend Engineer</text>
+  <!-- ── Divider ────────────────────────── -->
+  <line x1="80" y1="154" x2="1120" y2="154" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
 
-  <!-- Divider line -->
-  <line x1="80" y1="330" x2="580" y2="330" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <!-- ── HEADLINE ────────────────────────── -->
+  <text x="80" y="270" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="86" fill="white" letter-spacing="-2">Ship Fast.</text>
+  <text x="80" y="372" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-size="86" fill="url(#textGrad)" letter-spacing="-2">Stay Up.</text>
 
-  <!-- Tagline -->
-  <text x="80" y="372" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="24" fill="rgba(255,255,255,0.6)">Building infrastructure that ships fast and stays up.</text>
-  <text x="80" y="404" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="24" fill="rgba(255,255,255,0.6)">Founding Engineer at Vubo.</text>
+  <!-- ── Sub-headline ───────────────────── -->
+  <text x="80" y="424" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="400" font-size="22" fill="rgba(255,255,255,0.5)">Infrastructure · CI/CD · Cloud Architecture · APIs</text>
 
-  <!-- Tech badges -->
-  <!-- AWS -->
-  <rect x="80" y="448" width="84" height="32" rx="8" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <text x="122" y="469" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="rgba(255,255,255,0.7)" text-anchor="middle">AWS</text>
+  <!-- ── CTA button ─────────────────────── -->
+  <rect x="80" y="462" width="234" height="52" rx="12" fill="url(#ctaBg)"/>
+  <text x="197" y="494" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="18" fill="white" text-anchor="middle">View My Portfolio  →</text>
 
-  <!-- Terraform -->
-  <rect x="176" y="448" width="100" height="32" rx="8" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <text x="226" y="469" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="rgba(255,255,255,0.7)" text-anchor="middle">Terraform</text>
+  <!-- ── Tech badges ────────────────────── -->
+  <rect x="332" y="462" width="68" height="52" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="366" y="494" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="rgba(255,255,255,0.6)" text-anchor="middle">AWS</text>
 
-  <!-- Docker -->
-  <rect x="288" y="448" width="84" height="32" rx="8" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <text x="330" y="469" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="rgba(255,255,255,0.7)" text-anchor="middle">Docker</text>
+  <rect x="412" y="462" width="88" height="52" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="456" y="494" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="rgba(255,255,255,0.6)" text-anchor="middle">Terraform</text>
 
-  <!-- Node.js -->
-  <rect x="384" y="448" width="88" height="32" rx="8" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <text x="428" y="469" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="rgba(255,255,255,0.7)" text-anchor="middle">Node.js</text>
+  <rect x="512" y="462" width="72" height="52" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="548" y="494" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="rgba(255,255,255,0.6)" text-anchor="middle">Docker</text>
 
-  <!-- K8s -->
-  <rect x="484" y="448" width="104" height="32" rx="8" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-  <text x="536" y="469" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" font-size="14" fill="rgba(255,255,255,0.7)" text-anchor="middle">Kubernetes</text>
+  <rect x="596" y="462" width="76" height="52" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="634" y="494" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="rgba(255,255,255,0.6)" text-anchor="middle">Node.js</text>
 
-  <!-- URL at bottom -->
-  <text x="80" y="570" font-family="'Courier New', Courier, monospace" font-weight="400" font-size="20" fill="rgba(255,255,255,0.3)" letter-spacing="0.05em">agoyel25.github.io</text>
+  <rect x="684" y="462" width="94" height="52" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="731" y="494" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="600" font-size="13" fill="rgba(255,255,255,0.6)" text-anchor="middle">Kubernetes</text>
 
-  <!-- Right side decorative circuit/lines -->
-  <g opacity="0.15">
-    <line x1="900" y1="100" x2="1100" y2="100" stroke="white" stroke-width="1"/>
-    <line x1="1100" y1="100" x2="1100" y2="300" stroke="white" stroke-width="1"/>
-    <circle cx="900" cy="100" r="4" fill="white"/>
-    <circle cx="1100" cy="100" r="4" fill="white"/>
-    <circle cx="1100" cy="300" r="4" fill="white"/>
-    <line x1="820" y1="200" x2="1000" y2="200" stroke="white" stroke-width="1"/>
-    <circle cx="820" cy="200" r="4" fill="white"/>
-    <circle cx="1000" cy="200" r="4" fill="white"/>
-    <line x1="1000" y1="200" x2="1000" y2="400" stroke="white" stroke-width="1"/>
-    <line x1="1000" y1="400" x2="1150" y2="400" stroke="white" stroke-width="1"/>
-    <circle cx="1000" cy="400" r="4" fill="white"/>
-    <circle cx="1150" cy="400" r="4" fill="white"/>
-    <line x1="870" y1="480" x2="1050" y2="480" stroke="white" stroke-width="1"/>
-    <circle cx="870" cy="480" r="4" fill="white"/>
-    <circle cx="1050" cy="480" r="4" fill="white"/>
-    <line x1="1050" y1="480" x2="1050" y2="560" stroke="white" stroke-width="1"/>
-    <circle cx="1050" cy="560" r="4" fill="white"/>
-    <!-- accent dot on circuit -->
-    <circle cx="1100" cy="300" r="7" fill="#e85c2c" opacity="0.8"/>
-    <circle cx="820" cy="200" r="7" fill="#ff9147" opacity="0.6"/>
+  <!-- ── URL ────────────────────────────── -->
+  <text x="80" y="584" font-family="'Courier New', Courier, monospace" font-size="18" fill="rgba(255,255,255,0.25)" letter-spacing="0.04em">agoyel25.github.io</text>
+
+  <!-- ── Decorative circuit lines (right) ── -->
+  <g opacity="0.12" stroke="white" stroke-width="1">
+    <line x1="900" y1="80" x2="1120" y2="80"/>
+    <line x1="1120" y1="80" x2="1120" y2="320"/>
+    <line x1="840" y1="180" x2="1020" y2="180"/>
+    <line x1="1020" y1="180" x2="1020" y2="420"/>
+    <line x1="1020" y1="420" x2="1160" y2="420"/>
+    <line x1="880" y1="500" x2="1060" y2="500"/>
+    <line x1="1060" y1="500" x2="1060" y2="580"/>
+    <circle cx="900" cy="80" r="3.5" fill="white"/>
+    <circle cx="1120" cy="80" r="3.5" fill="white"/>
+    <circle cx="1120" cy="320" r="3.5" fill="white"/>
+    <circle cx="840" cy="180" r="3.5" fill="white"/>
+    <circle cx="1020" cy="180" r="3.5" fill="white"/>
+    <circle cx="1020" cy="420" r="3.5" fill="white"/>
+    <circle cx="1160" cy="420" r="3.5" fill="white"/>
+    <circle cx="880" cy="500" r="3.5" fill="white"/>
+    <circle cx="1060" cy="500" r="3.5" fill="white"/>
+    <circle cx="1060" cy="580" r="3.5" fill="white"/>
   </g>
+  <!-- accent nodes -->
+  <circle cx="1120" cy="320" r="6" fill="#e85c2c" opacity="0.7"/>
+  <circle cx="840" cy="180" r="6" fill="#ff9147" opacity="0.5"/>
 </svg>
