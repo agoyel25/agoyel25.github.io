@@ -19,7 +19,28 @@
       <a href="/Aman_Goyal_Resume.pdf" download="Aman_Goyal_Resume.pdf" class="nav-resume font-mono">
         Resume ↗
       </a>
+      <button
+        class="nav-hamburger"
+        id="nav-hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-mobile"
+      >
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+      </button>
     </div>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <a href="#work" class="nav-mobile-link">Work</a>
+    <a href="#experience" class="nav-mobile-link">Experience</a>
+    <a href="#contact" class="nav-mobile-link">Contact</a>
+    <a href="/Aman_Goyal_Resume.pdf" download="Aman_Goyal_Resume.pdf" class="nav-mobile-resume font-mono">
+      Resume ↗
+    </a>
   </div>
 </nav>
 
@@ -66,6 +87,7 @@
     border-radius: 50%;
     border: 1px solid rgba(232, 92, 44, 0.32);
     box-shadow: 0 10px 30px rgba(232, 92, 44, 0.14);
+    flex-shrink: 0;
   }
 
   .nav-logo-text {
@@ -120,6 +142,11 @@
     box-shadow: 0 4px 16px rgba(232, 92, 44, 0.35);
   }
 
+  .nav-resume:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
   .nav-links a {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.875rem;
@@ -134,13 +161,146 @@
     color: rgba(237, 237, 237, 0.95);
   }
 
+  /* ── Hamburger button ──────────────────── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 9px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .nav-hamburger:hover {
+    border-color: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .ham-bar {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background: rgba(237, 237, 237, 0.75);
+    border-radius: 2px;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  }
+
+  .nav-hamburger.is-open .ham-bar:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+
+  .nav-hamburger.is-open .ham-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-hamburger.is-open .ham-bar:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* ── Mobile dropdown ───────────────────── */
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    padding: 0 24px;
+    background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    transition:
+      max-height 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.25s ease,
+      padding 0.25s ease;
+  }
+
+  .nav-mobile.is-open {
+    max-height: 320px;
+    opacity: 1;
+    padding: 12px 24px 20px;
+  }
+
+  .nav-mobile-link {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(237, 237, 237, 0.6);
+    text-decoration: none;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+    transition: color 0.2s ease;
+    display: block;
+  }
+
+  .nav-mobile-link:hover {
+    color: rgba(237, 237, 237, 0.95);
+  }
+
+  .nav-mobile-resume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 50px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: background 0.2s ease;
+  }
+
+  .nav-mobile-resume:hover {
+    background: #d44f20;
+  }
+
+  /* ── Responsive ────────────────────────── */
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .nav-resume { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-mobile { display: flex; }
+    .nav-right { gap: 0; }
+  }
+
   @media (max-width: 480px) {
     .nav-logo-text { display: none; }
     .nav-avatar {
       width: 40px;
       height: 40px;
     }
-    .nav-links { gap: 20px; }
-    .nav-links a { font-size: 0.8rem; }
   }
 </style>
+
+<script>
+  const hamburger = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('nav-mobile');
+
+  hamburger?.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('is-open');
+    mobileMenu?.classList.toggle('is-open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    mobileMenu?.setAttribute('aria-hidden', String(!isOpen));
+  });
+
+  // Close mobile menu when a link is clicked
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      hamburger?.classList.remove('is-open');
+      mobileMenu.classList.remove('is-open');
+      hamburger?.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    });
+  });
+</script>

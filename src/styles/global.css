@@ -93,6 +93,15 @@ body {
 }
 
 /* ─────────────────────────────────────────
+   Focus Visible (Keyboard Accessibility)
+───────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─────────────────────────────────────────
    Buttons
 ───────────────────────────────────────── */
 .btn-primary {
@@ -119,6 +128,11 @@ body {
   box-shadow: 0 8px 28px rgba(232, 92, 44, 0.38);
 }
 
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
 .btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -142,6 +156,10 @@ body {
   transform: translateY(-1px);
 }
 
+.btn-ghost:active {
+  transform: translateY(0);
+}
+
 /* ─────────────────────────────────────────
    Scroll Reveal
 ───────────────────────────────────────── */
@@ -163,6 +181,19 @@ body {
 .reveal-d3 { transition-delay: 0.24s; }
 .reveal-d4 { transition-delay: 0.32s; }
 .reveal-d5 { transition-delay: 0.40s; }
+
+/* ─────────────────────────────────────────
+   Reduced Motion (Accessibility)
+───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .orb { animation: none !important; }
+  .pulse-dot::after { animation: none !important; }
+}
 
 /* ─────────────────────────────────────────
    Orb Keyframes

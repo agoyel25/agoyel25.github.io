@@ -1,0 +1,14 @@
+Subject: Interested in joining Deeptune
+
+Hi Tim,
+
+Saw your Series A announcement — "distilling the entire economy into environments for AI" is a genuinely compelling way to frame the problem. Building the infrastructure layer that lets agents practice doing real work is the kind of thing I want to be close to.
+
+My background is backend and infrastructure — I was Engineer #3 at Vubo owning the full AWS stack, async job pipelines, and AI integrations for a product with 2,500+ users. I've also done RLHF contract work through Outlier — code evaluation, adversarial prompting, output ranking — so I have some feel for the training side too.
+
+I know the role targets senior engineers and I may not be there yet, but I'm a fast learner and willing to prove it.
+
+Portfolio: [your portfolio link] · GitHub: github.com/agoyel25 · Resume attached
+
+— Aman Goyal
++91 9520409003
