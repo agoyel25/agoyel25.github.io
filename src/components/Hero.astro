@@ -25,7 +25,7 @@
       </h1>
 
       <p class="hero-tagline reveal reveal-d2">
-        I build infrastructure that<br class="br-desktop" />ships fast and stays up.
+        I build the infrastructure<br class="br-desktop" />AI systems run on.
       </p>
 
       <p class="hero-quip font-mono reveal reveal-d3">
@@ -276,7 +276,40 @@
   }
 
   @media (max-width: 900px) {
-    .hero-right { display: none; }
+    .hero-content {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .hero-meta {
+      justify-content: center;
+    }
+
+    .hero-ctas {
+      justify-content: center;
+    }
+
+    .hero-tagline,
+    .hero-quip {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .scroll-hint {
+      justify-content: center;
+    }
+
+    .hero-right {
+      display: flex;
+    }
+
+    .photo-frame {
+      width: 200px;
+      height: 240px;
+    }
+
     .hero-name { font-size: clamp(5rem, 16vw, 8rem); }
   }
 
@@ -284,5 +317,10 @@
     .br-desktop { display: none; }
     .hero-name { font-size: clamp(4rem, 20vw, 6rem); }
     .hero { padding-top: 110px; }
+
+    .photo-frame {
+      width: 160px;
+      height: 200px;
+    }
   }
 </style>

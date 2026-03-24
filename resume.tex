@@ -14,17 +14,14 @@
 \input{glyphtounicode}
 \setlength{\footskip}{5pt}
 
-%----------FONT OPTIONS----------
-%sans-serif
 \usepackage[sfdefault]{FiraSans}
 
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
@@ -32,25 +29,18 @@
 \addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-%-------------------------
-% Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item\small{{#1 \vspace{-2pt}}}
 }
 
 \newcommand{\resumeSubheading}[4]{
@@ -76,145 +66,131 @@
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \begin{document}
-
-
 
 \begin{center}
     \textbf{\Huge \scshape Aman Goyal} \\ \vspace{2pt}
-    \small +91 9520409003 $|$ 
-    \href{mailto:amangoyel0@gmail.com}{\underline{amangoyel0@gmail.com}} $|$ 
+    \small +91 9520409003 $|$
+    \href{mailto:amangoyel0@gmail.com}{\underline{amangoyel0@gmail.com}} $|$
     \href{https://agoyel25.github.io}{\underline{Portfolio}} $|$
-    \href{https://www.linkedin.com/in/amangoyal25}{\underline{Linkedin}} $|$
-    \href{https://github.com/agoyel25}{\underline{Github}}
+    \href{https://www.linkedin.com/in/amangoyal25}{\underline{LinkedIn}} $|$
+    \href{https://github.com/agoyel25}{\underline{GitHub}}
 \end{center}
 
-
+\section{Summary}
+\resumeItemListStart
+\resumeItem{Backend \& Infrastructure Engineer with 2 years building production systems on AWS and shipping AI-native products --- from cloud infrastructure and distributed job pipelines to browser-based agents that operate within live software environments.}
+\resumeItem{Strong in Infrastructure as Code (Terraform), containerization (Docker), and CI/CD automation (GitHub Actions, GitLab CI) with a focus on reliability, self-healing architecture, and zero-downtime deployments.}
+\resumeItem{Backend experience across Python, TypeScript, and Golang --- building job pipelines, REST APIs, subscription systems, and internal microservices in production environments.}
+\resumeItem{Built AI-integrated products across multiple layers: browser-native agents that inject into and extract state from live software interfaces; semantic search and retrieval systems using embeddings; async AI generation pipelines using fal.ai, Replicate, and Remotion.}
+\resumeItem{Shipped real products with measurable outcomes: 2,500+ users, \$20K+ cumulative revenue, 99.9\% uptime, and 1,000+ videos processed.}
+\resumeItemListEnd
 
 %-----------EDUCATION-----------
 \section{Education}
-  \resumeSubHeadingListStart
+\resumeSubHeadingListStart
     \resumeSubheading
-      {Master of Computer Applications}{{Aug. 2022 -- July 2024}}
-      {Graphic Era Hill University}{ Dehradun, Uttarakhand}
-    \resumeSubheading
-      {Bachelor of Science in Information Technology}{{Aug. 2019 -- July 2022}}
       {Graphic Era Hill University}{Dehradun, Uttarakhand}
-  \resumeSubHeadingListEnd
+      {MCA (Aug. 2022 -- July 2024) \quad B.Sc. Information Technology (Aug. 2019 -- July 2022)}{}
+\resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
 \section{Experience}
 \resumeSubHeadingListStart
 
 \resumeSubheading
-{Founding Engineer / DevOps \& Backend Engineer}{Feb. 2025 -- Present}
-{Vubo}{Remote}
+{Early Engineer \#3 --- DevOps \& Backend}{Nov. 2024 -- Mar. 2026}
+{Vubo (vubo.ai)}{Remote}
 \resumeItemListStart
-\resumeItem{Built and maintained production infrastructure for an AI-powered video SaaS using AWS (ECS Fargate, S3, CloudFront, RDS, Lambda) and Docker-based deployments.}
-\resumeItem{Designed scalable background job architecture using Redis, BullMQ/Inngest for media processing, AI workflows, and asynchronous task orchestration.}
-\resumeItem{Implemented subscription-based credit system with atomic usage control, rate limiting, and workspace-level storage enforcement.}
-\resumeItem{Optimized CI/CD pipelines using GitHub Actions with build caching, environment automation, and automated CloudFront cache invalidation.}
-\resumeItem{Integrated observability using OpenTelemetry and product analytics (PostHog) to monitor performance and user behavior across AI generation pipelines.}
-\resumeItem{Reduced infrastructure costs through architecture optimization, resource right-sizing, and efficient cloud asset delivery strategies.}
+\resumeItem{Contributed to a platform serving 2,500+ users and \$20K+ in cumulative revenue, owning infrastructure, backend services, and AI integration end-to-end.}
+\resumeItem{Architected and operated highly available AWS infrastructure (ECS Fargate, EC2, VPC, IAM, S3, RDS, Lambda, CloudFront) with self-healing design maintaining 99.9\% uptime.}
+\resumeItem{Provisioned all infrastructure via Terraform (IaC) with modular, environment-consistent architecture across dev, staging, and production.}
+\resumeItem{Engineered CI/CD pipelines using GitHub Actions with full automation across dev, staging, and prod; integrated AWS CodeDeploy for automated rollback, reducing failed release impact to negligible levels.}
+\resumeItem{Built and maintained backend services in TypeScript (Next.js) and Golang --- including subscription-gated access, atomic credit deduction, rate limiting, and a referral growth system; backed by PostgreSQL and Redis.}
+\resumeItem{Developed Golang microservices for internal tooling: admin dashboard, automated database backups, and free-tier utilities (background remover, etc.).}
+\resumeItem{Integrated AI video generation pipeline using fal.ai, Replicate, and Remotion; orchestrated async API calls via Inngest with prompt engineering to ensure consistent video output quality across 1,000+ processed videos.}
+\resumeItem{Deployed observability stack using OpenTelemetry, Prometheus, and structured logging --- reducing mean time to debug incidents by \textasciitilde60\%.}
+\resumeItem{Optimized CloudFront CDN caching strategies, cutting average asset latency by \textasciitilde35\% globally.}
+\resumeItem{Cut monthly infrastructure spend by \textasciitilde40\% through autoscaling tuning, storage optimization, and compute right-sizing.}
 \resumeItemListEnd
 
-
 \resumeSubheading
-{Software Engineer (Freelance / DevOps)}{Jun. 2024 -- Present}
-{Independent Projects \& Startup Consulting}{Remote}
+{Software Engineer --- DevOps \& Backend (Freelance)}{Jun. 2024 -- Jan. 2025}
+{Independent Consulting}{Remote}
 \resumeItemListStart
-\resumeItem{Designed and deployed cloud infrastructure for early-stage startups using AWS, Docker, reverse proxies, and automated CI/CD workflows.}
-\resumeItem{Reduced operational costs by replacing \$500+/month SaaS tools with self-hosted open-source alternatives (Umami, Chatwoot, Uptime Kuma, OpenReplay) on a single VPS.}
-\resumeItem{Implemented secure production environments with HTTPS/TLS, least-privilege access, environment isolation, and VPN-restricted internal services.}
-\resumeItem{Built backend services and automation workflows for analytics, media processing, and scheduled job execution with high reliability.}
-\resumeItem{Provided end-to-end DevOps setup including infrastructure provisioning, monitoring, logging, and deployment automation for multiple projects.}
+\resumeItem{Delivered end-to-end AWS infrastructure for startup clients using Terraform, Docker, and CI/CD pipelines (GitHub Actions, GitLab CI).}
+\resumeItem{Configured Linux servers with hardened networking, reverse proxy setup (Caddy/Nginx), TLS termination, and VPN-restricted access for secure production environments.}
+\resumeItem{Automated infrastructure provisioning and configuration management workflows using Python, Shell, and Ansible.}
+\resumeItem{Established monitoring and logging stacks (Prometheus, Grafana, ELK) for real-time observability and alerting across client systems.}
+\resumeItem{Reduced client SaaS tooling costs significantly by migrating to self-hosted observability and support tools while maintaining reliability.}
+\resumeItem{Enforced security best practices, including VPC isolation, IAM least-privilege policies, HTTPS/TLS, and distributed systems resilience patterns.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-
-%-----------Projects-----------
+%-----------PROJECTS-----------
 \section{Projects}
 \resumeSubHeadingListStart
 
 \resumeProjectHeading
-{\textbf{Vubo} $|$ \emph{AI Video Generation SaaS}}{\href{https://vubo.ai}{vubo.ai}}
+{\textbf{Vubo} $|$ \emph{AI Video Generation SaaS --- Next.js, Golang, AWS, Remotion, fal.ai}}{\href{https://vubo.ai}{vubo.ai}}
 \resumeItemListStart
-\resumeItem{Built and maintained a full-stack AI SaaS platform for automated video generation using Next.js, PostgreSQL, Redis, and AWS (ECS, S3, Lambda, CloudFront).}
-\resumeItem{Designed scalable background job architecture using Inngest and BullMQ for media processing, credit management, and workflow orchestration.}
-\resumeItem{Implemented subscription-gated access, atomic credit deduction, rate limiting, and referral-based growth system.}
+\resumeItem{Full-stack AI SaaS platform for automated video generation serving 2,500+ users with \$20K+ in cumulative revenue.}
+\resumeItem{Orchestrated async AI video pipeline using fal.ai, Replicate, and Remotion; applied prompt engineering techniques to improve generation consistency and output quality.}
+\resumeItem{Developed distributed background job system using Inngest and BullMQ for media processing, credit management, and workflow orchestration at scale.}
+\resumeItem{Shipped backend features in TypeScript and Golang: subscription logic, atomic credit deduction, rate limiting, referral system, and internal admin tooling; leveraged PostgreSQL (RDS) and Redis (ElastiCache) for data and caching layers.}
 \resumeItem{Integrated OpenTelemetry tracing and PostHog analytics; optimized CI/CD with GitHub Actions caching and automated CloudFront invalidations.}
 \resumeItemListEnd
 
-
 \resumeProjectHeading
-{\textbf{ClipDecode} $|$ \emph{AI Video Analysis Platform}}{\href{https://clipdecode.com}{clipdecode.com}}
+{\textbf{Lazyapply.xyz} $|$ \emph{AI Reply Assistant --- Astro, Cloudflare, OpenRouter}}{\href{https://lazyapply.xyz}{lazyapply.xyz}}
 \resumeItemListStart
-\resumeItem{Developed a multi-step AI processing pipeline (download → transcription → analysis → synthesis) using Google Gemini and Mistral APIs.}
-\resumeItem{Orchestrated fault-tolerant async workflows using Convex scheduler with real-time state updates and retry handling.}
-\resumeItem{Built full-stack application with Next.js 15, TypeScript, Clerk authentication, and credit-based usage controls.}
-\resumeItem{Integrated subscription billing via Dodo Payments with idempotent webhook processing and tier-based access control.}
+\resumeItem{Browser-native agent that injects into and operates within live software interfaces (X, Reddit) --- extracting structured DOM state, augmenting with stored user context, and generating AI output inside the host application without modifying it.}
+\resumeItem{Engineered real-time DOM scraping using MutationObserver to extract composer state and tweet thread context; fed extracted data into dynamic prompt construction for OpenRouter-powered LLM calls.}
+\resumeItem{Applied context engineering techniques to improve reply relevance and match user tone across different conversation types.}
+\resumeItem{Backend powered by Cloudflare D1 (SQL), KV storage, and edge functions for low-latency stateless execution globally.}
+\resumeItem{Frontend built with Astro for minimal client-side overhead and fast load performance.}
 \resumeItemListEnd
 
+\resumeProjectHeading
+{\textbf{BookmarkBrain} $|$ \emph{Local-First AI Knowledge Base --- TypeScript, Chrome Extension, Embeddings}}{\href{https://github.com/agoyel25/BookmarkBrain}{github.com/agoyel25/BookmarkBrain}}
+\resumeItemListStart
+\resumeItem{Open-source Chrome extension with 50 active users; turns X and Reddit bookmarks into a queryable semantic knowledge base entirely in-browser.}
+\resumeItem{Built local-first storage architecture with semantic embeddings and vector retrieval --- zero backend dependency, all personal data stays on-device.}
+\resumeItem{Implemented BYOK abstraction layer supporting OpenAI, OpenRouter, and Gemini; natural language Q\&A returns answers with citations back to source posts.}
+\resumeItemListEnd
 
 \resumeProjectHeading
-{\textbf{Cloud Infrastructure Automation}}{\emph{AWS, Terraform, GitHub Actions}}
+{\textbf{Cloud Infrastructure Automation} $|$ \emph{AWS, Terraform, CI/CD, Kubernetes (EKS)}}{}
 \resumeItemListStart
-\resumeItem{Provisioned production-ready AWS infrastructure using modular Terraform (VPC, ALB, ECS/Fargate, RDS, CloudFront, WAF, ElastiCache).}
-\resumeItem{Implemented zero-downtime blue-green deployments with ECS + CodeDeploy integrated into GitHub Actions and ECR workflows.}
-\resumeItem{Designed secure-by-default architecture with least-privilege IAM, TLS, WAF rules, and secrets management via SSM/Secrets Manager.}
-\resumeItem{Improved reliability using autoscaling, RDS Proxy connection pooling, CloudWatch monitoring, and automated backup/alerting pipelines.}
+\resumeItem{Provisioned modular AWS infrastructure using Terraform (VPC, ECS, EKS, RDS, ALB, CloudFront, WAF, ElastiCache).}
+\resumeItem{Configured CI/CD pipelines with GitHub Actions covering automated deployments, artifact management, and rollback mechanisms.}
+\resumeItem{Implemented blue-green deployment strategy and autoscaling policies for high availability and zero-downtime releases.}
+\resumeItem{Set up CloudWatch monitoring and custom metrics pipelines for proactive incident detection and alerting.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-
-%
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
 \small{\item{
-
-\textbf{Languages:} TypeScript, JavaScript, Golang, SQL, Shell Scripting \\
-
-\textbf{Backend \& Frameworks:} Node.js, Next.js (App Router), Express.js, REST APIs, Convex, Drizzle ORM \\
-
-\textbf{Cloud \& DevOps:} AWS (ECS Fargate, EC2, S3, CloudFront, RDS, Lambda, IAM, CloudWatch, WAF), Docker, Terraform, GitHub Actions, CI/CD \\
-
-\textbf{Infrastructure \& Systems:} Linux, Nginx, Reverse Proxy, Redis, BullMQ, Inngest, Background Jobs, System Design, Infrastructure as Code (IaC) \\
-
-\textbf{Monitoring \& Observability:} OpenTelemetry, PostHog, Logging, Metrics, Performance Optimization \\
-
-\textbf{AI \& Agent Systems:} Claude SDK, OpenAI-compatible APIs, Vercel AI SDK, Agentic Workflows, LLM Orchestration, AI Pipelines
-
+\textbf{Languages:} Python, TypeScript, JavaScript, Golang, SQL, Shell \\
+\textbf{Cloud \& DevOps:} AWS (EC2, ECS, EKS, S3, CloudFront, RDS, Lambda, IAM, VPC), Terraform, Docker, Kubernetes (EKS), CI/CD \\
+\textbf{CI/CD \& Automation:} GitHub Actions, GitLab CI, AWS CodeDeploy, Ansible, Infrastructure as Code (IaC) \\
+\textbf{Monitoring \& Observability:} Prometheus, Grafana, ELK, OpenTelemetry, CloudWatch, Logging \& Alerting \\
+\textbf{Backend \& Systems:} REST APIs, Distributed Systems, Microservices, Linux, Networking, Reverse Proxy \\
+\textbf{AI \& Integrations:} LLM APIs (OpenAI, Gemini, Mistral, OpenRouter), Semantic Embeddings, Vector Retrieval, Browser Extension APIs, fal.ai, Replicate, Remotion, Inngest, Prompt Engineering \\
+\textbf{Databases:} PostgreSQL, Redis, Cloudflare D1, KV Storage \\
+\textbf{Other:} Performance Optimization, Cost Optimization, System Design
 }}
 \end{itemize}
 
-
-
- 
-\section{Certifications}
-\resumeItemListStart
-    \resumeItem{\textbf{Learn How To Code - Google's Go Programming Language}}
-    \resumeItem{Certificate Issuer: Udemy}
-    
-    
-    \resumeItem{\textbf{Practical Ethical Hacking}}
-    \resumeItem{Certificate Issuer: Udemy}
-\resumeItemListEnd
-
-
-%-------------------------------------------
 \end{document}
