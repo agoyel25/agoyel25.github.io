@@ -35,6 +35,23 @@ const cases = [
     screenshotAlt: 'BookmarkBrain semantic search interface',
   },
   {
+    label: 'Open-Source CLI Tool',
+    title: 'packrat',
+    url: null,
+    github: 'https://github.com/agoyel25/Packrat',
+    metric: '1-cmd',
+    metricLabel: 'Full Machine\nRestore',
+    problem:
+      'Rebuilding a WSL environment after a reinstall meant manually hunting down dotfiles, SSH keys, shell configs, AI agent data, and package lists — with no reliable way to capture everything before wiping the machine.',
+    built:
+      'Go CLI with an interactive Bubbletea TUI wizard, smart category detection across SSH keys, shell configs, AI agent data, cloud credentials, and editor settings. Archives to .tar.zst via Zstandard and snapshots the package manager state alongside the backup for a full rebuild.',
+    result:
+      'One command to back up, one command to restore — entire WSL home directory plus package list captured in a single compressed archive. Non-interactive mode supports scripted and cron-based runs without any prompts.',
+    tags: ['Go', 'Cobra', 'Bubbletea', 'Zstandard', 'TUI', 'CLI', 'Open Source'],
+    screenshot: '/banner.png',
+    screenshotAlt: 'packrat interactive TUI backup wizard running in terminal',
+  },
+  {
     label: 'AI Video SaaS',
     title: 'Vubo',
     url: 'https://vubo.ai',
